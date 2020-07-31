@@ -6,7 +6,7 @@ require_relative '../helpers/use_fixture_repo'
 require_relative '../helpers/redirection'
 
 describe 'binding a book locally' do
-  include Bookbinder::Redirection
+  include Bookwatch::Redirection
 
   use_fixture_repo('dita-book')
 
@@ -44,7 +44,7 @@ describe 'binding a book locally' do
 
   it 'generates pdfs for each section listed in pdf_config in the artifacts directory' do
     swallow_stdout do
-      `#{gem_root}/install_bin/bookbinder imprint local`
+      `#{gem_root}/install_bin/bookwatch imprint local`
     end
 
     pdf_one = Pathname(File.join('artifacts','pdfs','my-first-pdf.pdf'))

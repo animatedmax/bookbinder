@@ -1,4 +1,4 @@
-module Bookbinder
+module Bookwatch
   class GitFake
     def initialize
       @git_urls = []

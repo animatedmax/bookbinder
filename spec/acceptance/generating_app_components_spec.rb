@@ -2,7 +2,7 @@ require 'yaml'
 require_relative '../helpers/redirection'
 require_relative '../helpers/use_fixture_repo'
 
-module Bookbinder
+module Bookwatch
   describe 'bind local' do
     use_fixture_repo
 
@@ -14,11 +14,11 @@ module Bookbinder
 
     let(:gem_root) { File.absolute_path('../../', __dir__) }
 
-    include Bookbinder::Redirection
+    include Bookwatch::Redirection
 
     it 'generates a rack app' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       index_html = File.read File.join('final_app', 'public', 'foods', 'sweet', 'index.html')
@@ -27,7 +27,7 @@ module Bookbinder
 
     it 'respects subnav includes' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       dogs_index = File.read File.join('final_app', 'public', 'dogs', 'index.html')

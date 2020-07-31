@@ -5,7 +5,7 @@ require 'json'
 require_relative 'query'
 require_relative 'renderer'
 
-module Bookbinder
+module Bookwatch
   module Search
     class Handler
       def initialize(client_class = Elasticsearch::Client, environment = ENV)

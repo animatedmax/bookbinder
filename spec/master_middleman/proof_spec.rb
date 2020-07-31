@@ -5,7 +5,7 @@ require_relative '../helpers/use_fixture_repo'
 require_relative '../helpers/redirection'
 
 describe 'binding with the proof flag' do
-  include Bookbinder::Redirection
+  include Bookwatch::Redirection
 
   use_fixture_repo
 
@@ -26,7 +26,7 @@ describe 'binding with the proof flag' do
 
      it 'shows beginning and end of partial content and pages that use partial' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local --proof`
+        `#{gem_root}/install_bin/bookwatch bind local --proof`
       end
 
       contents = File.read(File.join('final_app', 'public', 'proof', 'file_that_calls_two_partials.html'))

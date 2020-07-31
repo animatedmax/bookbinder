@@ -1,6 +1,6 @@
 require_relative '../../../../template_app/lib/search/hit'
 
-module Bookbinder::Search
+module Bookwatch::Search
   describe Hit do
     it 'trims the site information out of the title' do
       hit = Hit.new('_source' => { 'title' => 'Foo Bar | More Stuff', 'url' => 'foo.html' }, 'highlight' => { 'text' => ['foo'] })

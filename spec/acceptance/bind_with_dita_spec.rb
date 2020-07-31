@@ -3,7 +3,7 @@ require_relative '../helpers/book_fixture'
 require_relative '../helpers/application'
 require_relative '../helpers/git_fake'
 
-module Bookbinder
+module Bookwatch
   describe 'binding a book with DITA sections' do
 
     around_in_dita_ot_env(ENV)

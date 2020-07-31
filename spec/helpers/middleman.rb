@@ -1,6 +1,6 @@
 require 'middleman-core/logger'
 
-module Bookbinder
+module Bookwatch
   module SpecHelperMethods
     def generate_middleman_with(index_page)
       dir = tmp_subdir 'master_middleman'

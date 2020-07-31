@@ -2,7 +2,7 @@ require 'yaml'
 
 require_relative 'hit'
 
-module Bookbinder
+module Bookwatch
   module Search
     class Query
       attr_reader :search_term, :product_name, :product_version, :page_number, :result_list, :result_count, :last_page, :page_window

@@ -1,10 +1,10 @@
-require_relative '../../lib/bookbinder/commands/collection'
+require_relative '../../lib/bookwatch/commands/collection'
 require_relative '../helpers/redirection'
 require_relative '../helpers/dev_null'
 require_relative '../helpers/use_fixture_repo'
 
 describe "watching a book" do
-  include Bookbinder::Redirection
+  include Bookwatch::Redirection
   use_fixture_repo
 
   it "invokes middleman" do
@@ -14,7 +14,7 @@ describe "watching a book" do
   end
 
   def run_watch
-    commands = Bookbinder::Commands::Collection.new(DevNull.get_streams, double('vcs'))
+    commands = Bookwatch::Commands::Collection.new(DevNull.get_streams, double('vcs'))
     old_path = ENV['PATH']
     ENV['PATH'] = Dir.pwd
     swallow_stdout { commands.watch }

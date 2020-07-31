@@ -3,7 +3,7 @@ require 'rack/rewrite'
 require_relative './lib/server'
 require_relative './lib/search/handler'
 
-module Bookbinder
+module Bookwatch
   class RackApp
     def initialize(redirect_pathname, mail_client=nil, auth_required: true)
       @redirect_pathname = redirect_pathname
@@ -21,12 +21,12 @@ module Bookbinder
         use Rack::Deflater
         map '/api/feedback' do
           use MailFeedback, client
-          run Bookbinder::NotFound.new('public/404.html')
+          run Bookwatch::NotFound.new('public/404.html')
         end
         map '/search' do
-          run Bookbinder::Search::Handler.new
+          run Bookwatch::Search::Handler.new
         end
-        run Bookbinder::Server
+        run Bookwatch::Server
       end
     end
 

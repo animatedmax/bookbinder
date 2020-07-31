@@ -2,7 +2,7 @@ require_relative '../../template_app/mail_sender'
 require 'sendgrid-ruby'
 require 'rack/response'
 
-module Bookbinder
+module Bookwatch
   describe MailSender do
     it 'initializes SendGrid client' do
       expect(SendGrid::Client).to receive(:new).with(

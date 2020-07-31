@@ -6,7 +6,7 @@ require_relative '../helpers/use_fixture_repo'
 require_relative '../helpers/redirection'
 
 describe 'binding a book locally' do
-  include Bookbinder::Redirection
+  include Bookwatch::Redirection
 
   use_fixture_repo
 
@@ -20,7 +20,7 @@ describe 'binding a book locally' do
 
   it 'provides the production host to the ERB templates' do
     swallow_stdout do
-      `#{gem_root}/install_bin/bookbinder bind local --verbose`
+      `#{gem_root}/install_bin/bookwatch bind local --verbose`
     end
 
     index = File.read File.join('final_app', 'public', 'index.html')
@@ -44,7 +44,7 @@ describe 'binding a book locally' do
 
     it 'puts specified content into named directory' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       expect(Pathname(File.join('final_app', 'public', 'tiny_guys', 'great_danes.html'))).to exist
@@ -72,7 +72,7 @@ YAML
 
     it 'uses the provided layout' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       expect(Pathname(File.join('final_app', 'public', 'cake.html'))).to exist
@@ -80,7 +80,7 @@ YAML
 
     it 'prefers local layout files' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       index = File.read File.join('final_app', 'public', 'index.html')
@@ -89,7 +89,7 @@ YAML
 
     it 'compiles stylesheets files' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       expect(Pathname(File.join('final_app', 'public', 'stylesheets', 'book-styles.css'))).to exist
@@ -98,7 +98,7 @@ YAML
 
     it 'includes images' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       index = File.read File.join('final_app', 'public', 'dogs', 'index.html')
@@ -139,7 +139,7 @@ YAML
 
     it 'generates nav html' do
       swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
       end
 
       pugs_index = File.read File.join('final_app', 'public', 'dogs', 'pugs', 'index.html')
@@ -180,7 +180,7 @@ YAML
 
       it 'generates pdf config with each link in the props json' do
         swallow_stdout do
-        `#{gem_root}/install_bin/bookbinder bind local`
+        `#{gem_root}/install_bin/bookwatch bind local`
         end
 
         pdf_config = <<YAML
@@ -218,7 +218,7 @@ YAML
 
       it 'should succeed' do
         swallow_stdout do
-          `#{gem_root}/install_bin/bookbinder bind local`
+          `#{gem_root}/install_bin/bookwatch bind local`
         end
 
         expect(Pathname(File.join('final_app', 'public', 'dogs', 'pugs', 'index.html'))).to exist

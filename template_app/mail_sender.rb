@@ -2,7 +2,7 @@ require 'sendgrid-ruby'
 require 'rack/response'
 require 'uri'
 
-module Bookbinder
+module Bookwatch
   class MailSender
     def initialize(username, api_key, config={})
       @config = config

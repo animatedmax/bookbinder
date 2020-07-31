@@ -1,10 +1,10 @@
 require_relative './rack_static_if_exists'
 
-module Bookbinder
+module Bookwatch
   class Server
     class << self
       def call(env)
-        Bookbinder::Server.new.call(env)
+        Bookwatch::Server.new.call(env)
       end
     end
 
@@ -19,7 +19,7 @@ module Bookbinder
             'Access-Control-Allow-Origin' => '*'
           }]]
         }
-        run Bookbinder::NotFound.new("public/404.html")
+        run Bookwatch::NotFound.new("public/404.html")
       end
     end
 

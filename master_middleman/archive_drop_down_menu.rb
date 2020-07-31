@@ -1,4 +1,4 @@
-module Bookbinder
+module Bookwatch
   class ArchiveDropDownMenu
     def initialize(config, current_path: nil)
       @config = config_with_default(config)

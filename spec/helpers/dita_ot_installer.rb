@@ -1,6 +1,6 @@
 require 'net/http'
 
-module Bookbinder
+module Bookwatch
   class DitaOTInstaller
     UnpackingError = Class.new(RuntimeError)
 

@@ -6,4 +6,4 @@ whitelist:
 - Apache License 2.0
 ignore_groups: []
 dependencies_file_dir: ./doc/
-project_name: docs-bookbinder
+project_name: bookwatch

@@ -1,6 +1,6 @@
 require 'rack'
 
-module Bookbinder
+module Bookwatch
   class RackStaticIfExists < Rack::Static
     def can_serve(path)
       file_exists?(path) || dir_with_index_exists?(path)

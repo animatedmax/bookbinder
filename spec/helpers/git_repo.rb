@@ -1,4 +1,4 @@
-module Bookbinder
+module Bookwatch
   module GitRepo
     def init_repo(at_dir: nil,
                   branch: nil,

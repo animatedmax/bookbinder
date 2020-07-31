@@ -1,6 +1,6 @@
 require_relative '../../../../template_app/lib/search/handler'
 
-module Bookbinder::Search
+module Bookwatch::Search
   describe Handler do
     describe '#call' do
       let(:mock_client) { double(:elastic_search) }

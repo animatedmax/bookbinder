@@ -1,9 +1,9 @@
-require_relative '../../lib/bookbinder/cli'
-require_relative '../../lib/bookbinder/ingest/git_accessor'
+require_relative '../../lib/bookwatch/cli'
+require_relative '../../lib/bookwatch/ingest/git_accessor'
 require_relative '../helpers/middleman'
 require_relative '../helpers/use_fixture_repo'
 
-module Bookbinder
+module Bookwatch
   describe "a book with archive menus" do
     extend SpecHelperMethods
 
@@ -12,10 +12,10 @@ module Bookbinder
     before_all_in_fixture_repo('archive-menu-book') do
       begin
         silence_io_streams do
-          Bookbinder::CLI.start(%w(bind local --verbose))
+          Bookwatch::CLI.start(%w(bind local --verbose))
         end
       rescue Exception => e
-        puts "Error running bookbinder bind"
+        puts "Error running bookwatch bind"
         puts e.message
         puts e.backtrace.join("\n")
       end
@@ -98,7 +98,7 @@ module Bookbinder
     end
 
     def section_config
-      @section_config ||= load_config('per-repo-archive-menu-section-2', 'bookbinder.yml')
+      @section_config ||= load_config('per-repo-archive-menu-section-2', 'bookwatch.yml')
     end
 
     def load_config(repo_name, config_file)

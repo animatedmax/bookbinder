@@ -7,7 +7,7 @@ class String
   include ANSI::Mixin
 end
 
-spec = Gem::Specification::load("bookbinder.gemspec")
+spec = Gem::Specification::load("bookwatch.gemspec")
 puts "Building Gem version #{spec.version.to_s.yellow} at #{Time.now.strftime('%b %e, %l:%M %p').yellow}..."
-system('gem build bookbinder.gemspec')
-system("gem install bookbinder-#{spec.version}.gem --ignore-dependencies --no-document")
+system('gem build bookwatch.gemspec')
+system("gem install bookwatch-#{spec.version}.gem --ignore-dependencies --no-document")

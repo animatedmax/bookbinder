@@ -1,7 +1,7 @@
 require 'erb'
 require 'rack/utils'
 
-module Bookbinder
+module Bookwatch
   module Search
     class Renderer
       def initialize

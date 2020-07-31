@@ -1,6 +1,6 @@
 require 'nokogiri'
 
-module Bookbinder 
+module Bookwatch 
   class Proof < ::Middleman::Extension
     def initialize(*args)
       super
@@ -87,4 +87,4 @@ module Bookbinder
   end
 end
 
-::Middleman::Extensions.register(:proof, Bookbinder::Proof)
+::Middleman::Extensions.register(:proof, Bookwatch::Proof)

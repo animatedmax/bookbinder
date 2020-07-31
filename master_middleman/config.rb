@@ -1,4 +1,4 @@
-require 'bookbinder_helpers'
+require 'bookwatch_helpers'
 require 'proof'
 require 'middleman-syntax'
 require 'middleman-livereload'
@@ -7,7 +7,7 @@ require 'subdirectory_aware_assets'
 require 'middleman-compass'
 require 'font-awesome-sass'
 
-config = YAML.load_file('bookbinder_config.yml')
+config = YAML.load_file('bookwatch_config.yml')
 config.each do |k, v|
   set k, v
 end
@@ -31,7 +31,7 @@ set :relative_links, false
 
 page '/owners.json', :layout => false
 
-activate :bookbinder
+activate :bookwatch
 
 activate :proof
 

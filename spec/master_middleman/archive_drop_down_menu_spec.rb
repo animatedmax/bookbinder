@@ -1,6 +1,6 @@
 require_relative '../../master_middleman/archive_drop_down_menu'
 
-module Bookbinder
+module Bookwatch
   describe ArchiveDropDownMenu do
     it "uses the root menu when at the root path" do
       menu = ArchiveDropDownMenu.new(

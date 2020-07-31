@@ -1,0 +1,12 @@
+#!/bin/bash
+
+SCRIPT=$0
+while [ `readlink $SCRIPT` ]; do
+  SCRIPT=`readlink $SCRIPT`
+done
+pushd `dirname $SCRIPT` > /dev/null
+BOOKWATCH_BIN_PATH=`pwd`
+popd > /dev/null
+BOOKWATCH_PATH=`dirname $BOOKWATCH_BIN_PATH`
+
+BUNDLE_GEMFILE=${BOOKWATCH_PATH}/Gemfile bundle exec ${BOOKWATCH_BIN_PATH}/bookwatch $@

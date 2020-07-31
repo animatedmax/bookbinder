@@ -2,7 +2,7 @@ require 'net/http'
 require 'rack/test'
 require_relative '../../template_app/rack_app'
 
-module Bookbinder
+module Bookwatch
   describe RackApp do
     include Rack::Test::Methods
 

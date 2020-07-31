@@ -1,4 +1,4 @@
-module Bookbinder
+module Bookwatch
   class RepoFixture
     def self.repos_dir
       File.expand_path('../repositories', __FILE__)

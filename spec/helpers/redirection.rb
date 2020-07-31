@@ -1,4 +1,4 @@
-module Bookbinder
+module Bookwatch
   module Redirection
     def capture_stdout(&block)
       real_stdout = $stdout

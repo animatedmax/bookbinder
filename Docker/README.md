@@ -1,4 +1,4 @@
-A simple Dockerfile for executing bookbinder on your system.
+A simple Dockerfile for executing bookwatch on your system.
 
 ## Procedure
 
@@ -19,11 +19,11 @@ A simple Dockerfile for executing bookbinder on your system.
     $ bundle install
     ```
 
-5. Execute bookbinder commands to build or review your work, such as:
+5. Execute bookwatch commands to build or review your work, such as:
 
-    * `bundle exec bookbinder watch` - publishes book to `localhost:4567`
-    * `bundle exec bookbinder bind local` - creates book app in directory `final_app` using local source files 
-    * `bundle exec bookbinder bind remote` - creates book app in `final_app` based on source from remote Github repos
+    * `bundle exec bookwatch watch` - publishes book to `localhost:4567`
+    * `bundle exec bookwatch bind local` - creates book app in directory `final_app` using local source files 
+    * `bundle exec bookwatch bind remote` - creates book app in `final_app` based on source from remote Github repos
     * `rackup` from a `/final_app` directory - publishes book app to `localhost:9292`
 
 ## Limitations

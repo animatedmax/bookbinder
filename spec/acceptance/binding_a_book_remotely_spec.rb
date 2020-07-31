@@ -4,8 +4,8 @@ require_relative '../helpers/git_repo'
 require_relative '../helpers/redirection'
 
 describe 'binding a book remotely' do
-  include Bookbinder::GitRepo
-  include Bookbinder::Redirection
+  include Bookwatch::GitRepo
+  include Bookwatch::Redirection
 
   let(:gem_root) { File.expand_path('../../../', __FILE__) }
 
@@ -27,7 +27,7 @@ describe 'binding a book remotely' do
                                                  }
                                              ]))
 
-        `#{gem_root}/install_bin/bookbinder bind remote`
+        `#{gem_root}/install_bin/bookwatch bind remote`
 
         expect(File.read("#{dir}/final_app/public/some-section/index.html")).to include('My cat fell in the canal again.')
       end

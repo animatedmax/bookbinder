@@ -1,17 +1,17 @@
 require_relative '../helpers/redirection'
-require_relative '../../lib/bookbinder/commands/collection'
+require_relative '../../lib/bookwatch/commands/collection'
 require_relative '../helpers/use_fixture_repo'
 require_relative '../helpers/git_fake'
 require_relative '../helpers/dev_null'
 require 'pathname'
 require 'tmpdir'
 
-module Bookbinder
+module Bookwatch
   class Application
     include Redirection
 
     def initialize(git_client = GitFake.new)
-      @commands = Bookbinder::Commands::Collection.new(DevNull.get_streams, git_client)
+      @commands = Bookwatch::Commands::Collection.new(DevNull.get_streams, git_client)
     end
 
     def bind_book_from_remote(book, silent: true, &expectation)
@@ -36,7 +36,7 @@ module Bookbinder
     def execute_in_book(book, command, silent, block)
       repo_name = book.name
       temp_library = tmp_subdir 'repositories'
-      FileUtils.cp_r File.join(Bookbinder::RepoFixture.repos_dir, '.'), temp_library
+      FileUtils.cp_r File.join(Bookwatch::RepoFixture.repos_dir, '.'), temp_library
       FileUtils.cd(File.join(temp_library, repo_name)) do
         silent ? swallow_stdout { command.call } : command.call
         block.call

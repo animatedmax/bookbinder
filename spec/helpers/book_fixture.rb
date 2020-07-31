@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'ostruct'
 
-module Bookbinder
+module Bookwatch
   class BookFixture
     attr_reader :name, :section_source
 

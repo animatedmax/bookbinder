@@ -1,6 +1,6 @@
 require_relative '../../../../template_app/lib/search/query'
 
-module Bookbinder::Search
+module Bookwatch::Search
   describe Query do
     it 'extracts default params with search_term' do
       query = Query.new('q' => 'foo')

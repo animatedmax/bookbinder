@@ -1,4 +1,4 @@
-module Bookbinder
+module Bookwatch
   module Search
     class Hit
       def initialize(attrs = {})

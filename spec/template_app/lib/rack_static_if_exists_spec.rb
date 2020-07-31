@@ -1,6 +1,6 @@
 require_relative '../../../template_app/lib/rack_static_if_exists'
 
-module Bookbinder
+module Bookwatch
   describe RackStaticIfExists do
     subject do
       RackStaticIfExists.new(nil,

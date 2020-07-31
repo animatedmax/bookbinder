@@ -3,8 +3,8 @@
 set -e
 
 pushd `dirname $0` > /dev/null
-BOOKBINDER_BIN_PATH=`pwd`
+BOOKWATCH_BIN_PATH=`pwd`
 popd > /dev/null
 
-ln -s ${BOOKBINDER_BIN_PATH}/bindery /usr/local/bin/
-echo "linked ${BOOKBINDER_BIN_PATH}/bindery to /usr/local/bin/bindery"
+ln -s ${BOOKWATCH_BIN_PATH}/watch /usr/local/bin/
+echo "linked ${BOOKWATCH_BIN_PATH}/watch to /usr/local/bin/watch"
